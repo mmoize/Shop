@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "bf09b3b2df405d519575e670441cd840360ae29eb1d11ba3c92da2b040803019"
+            "sha256": "18956df81f4767db0ef83e9a37652f513a3ce4e82db1174d72c124a4ef1af799"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -66,6 +66,14 @@
             ],
             "index": "pypi",
             "version": "==3.0.7"
+        },
+        "django-paypal": {
+            "hashes": [
+                "sha256:85187da363df859a3f030ada45c649af64540004140cdbf7cddb800c50966c6a",
+                "sha256:8e06db6eb12b35040a6d60b918bc2f62d8b90fa90171f28ce4dfd53f10acc07e"
+            ],
+            "index": "pypi",
+            "version": "==1.0.0"
         },
         "future": {
             "hashes": [
@@ -132,6 +140,13 @@
                 "sha256:b3f43d496c6daba4493e7c431722aeb7dbc6288f52a6e04e7b6023b0247817e6"
             ],
             "version": "==2.23.0"
+        },
+        "six": {
+            "hashes": [
+                "sha256:30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259",
+                "sha256:8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"
+            ],
+            "version": "==1.15.0"
         },
         "sqlparse": {
             "hashes": [

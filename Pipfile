@@ -13,6 +13,7 @@ install = "*"
 whitenoise = "*"
 celery = "*"
 paypal = "*"
+django-paypal = "*"
 
 [requires]
 python_version = "3.7"
