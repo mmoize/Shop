@@ -9,6 +9,8 @@ pylint = "*"
 [packages]
 django = "*"
 gunicorn = "*"
+install = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.7"
