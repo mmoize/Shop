@@ -25,7 +25,10 @@ SECRET_KEY = '&brn#vv7^#r0m#7do*l-cv98)kt7tl6ryoscd8&4x9^3-y&8+p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'enigmatic-thicket-85514.herokuapp.com',
+    'http://127.0.0.1:8000/'
+]
 
 
 # Application definition
