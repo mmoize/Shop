@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+<html>
+  {% block head %}
+        <head>
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+            <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+            <meta charset="utf-8">
+            <title>Your Shopping Cart</title>
+        </head>
+  {% endblock  %}
+  {% block content %}
+    <body>
+        <h1>Your shopping cart</h1>
+        <table style="width:100%"  class = 'cart'>
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Remove</th>
+                    <th>Unit</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+        
+            <tbody>
+                {% for item in cart %}
+                    {% with product=item.product %}
+                        <tr>
+                            <td> 
+                                <a href="{{ product.get_absolute_url }}">
+                                    <img style="width: 300px;  height: 300px; object-fit: cover;" src ="{% if product.image %}{{ product.image.url }}{% else %}{% static 'image/no_image.jpg' %}{% endif %}">
+                                </a>
+                            </td>
+                            <td>{{ product.name }}</td>
+                            <td>
+                                <form action= "{% url 'cart:cart_add' product.id %}" method="post">
+                                    {% csrf_token %}
+                                    {{ item.update_quantity_form.quantity }}
+                                    {{ item.update_quantity_form.update }}
+                                    <input type="submit" value="Update"> 
+                                </form>
+                            </td>
+                            <td><a href="{% url "cart:cart_remove" product.id %}">Remove</a></td>
+                            <td class = 'num'>${{ item.price }}</td>
+                            <td class='num'>${{ item.total_price }}</td>
+                        </tr>
+                    {% endwith %}
+                {% endfor %}
+            </tbody> 
+            <tr class ="total">
+                <td>Total</td>
+                <td colspan="4"></td>
+                <td class ='num'>${{ cart.get_total_price }}</td>
+            </tr>             
+        </table>
+    </body>
+    <p class = 'text-right'>
+        <a href="{% url 'shoper:product_list' %}" class = 'button red'> Continue shopping</a>
+        <a href="{% url  'orders:order_create' %}"", class = 'button'>Checkout</a>
+    </p>
+   {% endblock  %}
+</html>
+
+
+
+
+
+
+

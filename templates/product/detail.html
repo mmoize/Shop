@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+ 
+  <meta charset="utf-8">
+        
+  {% block 'title' %}
+      {{ product.name }}
+  {% endblock  %}
+</head>
+
+
+
+  <body>
+    <div class = "product-detail" > 
+      <img style="width: 300px;  height: 300px; object-fit: cover;" src ="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.jpg' %}{% endif %}">
+      <h1>{{ product.name }}</h1>
+      <h3><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h3>
+      <p class = "price">${{ product.price }}</p>
+      
+      <form action ="{% url 'cart:cart_add' product.id %}" method='post'>
+        {% csrf_token %}
+        {{ form }}
+        
+        <input type ="submit" value="Add to Cart"/>
+      </form>
+      {{ product.description|linebreaks }}
+    </div>
+
+    
+  </body>
+{% endblock  %}

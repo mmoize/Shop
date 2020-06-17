@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/list.css' %}">
+
+  <meta charset="utf-8">
+        
+  {% block 'title' %}
+   Successful Payment
+  {% endblock  %}
+{% endblock  %}
+{% block content %}
+    <h1> Your payment was successful</h1>
+    <p>Your payment has been successfully recieved </p>
+{% endblock  %}

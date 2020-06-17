@@ -1,0 +1,196 @@
+{% load static %}
+<html>
+   <head>
+   <link rel="icon"  href="{% static 'img/favicon.ico' %}" type="image/gif" sizes="16x16">
+    <title>Moize shop | eCommers</title>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+   <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet'>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    
+        <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css ' %}">
+    <link rel="stylesheet" href=" {% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="{% static 'css/base.css' %}">
+      <meta charset ='utf-8' />
+      <title>
+        {% block title %}
+            My Shop
+        {% endblock  %} 
+      
+      </title> {% endcomment %}
+   </head>
+   <body>
+      <!--? Preloader Start -->
+    <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="preloader-circle"></div>
+                <div class="preloader-img pere-text">
+                    <img src="{% static 'img/logo/logo.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area">
+            <div class="main-header header-sticky">
+                <div class="container-fluid">
+                    <div class="menu-wrapper">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                        </div>
+                        <!-- Main-menu -->
+                        <div class="main-menu d-none d-lg-block">
+                            <nav>                                                
+                                <ul id="navigation">  
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="shop.html">shop</a></li>
+                                    <li><a href="about.html">about</a></li>
+                                    <li class="hot"><a href="#">Latest</a>
+                                        <ul class="submenu">
+                                            <li><a href="shop.html"> Product list</a></li>
+                                            <li><a href="product_details.html"> Product Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="blog.html">Blog</a>
+                                        <ul class="submenu">
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Pages</a>
+                                        <ul class="submenu">
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="cart.html">Cart</a></li>
+                                            <li><a href="elements.html">Element</a></li>
+                                            <li><a href="confirmation.html">Confirmation</a></li>
+                                            <li><a href="checkout.html">Product Checkout</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- Header Right -->
+                        <div class="header-right">
+                            <ul>
+                                <li>
+                                    <div class="nav-search search-switch">
+                                        <span class="flaticon-search"></span>
+                                    </div>
+                                </li>
+                                <li> <a href="login.html"><span class="flaticon-user"></span></a></li>
+                                <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Mobile Menu -->
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+      
+     
+      <div id='content'>
+         {% block content %}
+
+         {% endblock  %}
+      </div>
+    {% block scripts %}
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+        <script src=" {% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+        <!-- Jquery, Popper, Bootstrap -->
+        <script src="{% static 'js/vendor/jquery-1.12.4.min.js' %}"></script>
+        <script src="{% static 'js/popper.min.js' %}"></script>
+        <script src="  {% static 'js/bootstrap.min.js' %}"></script>
+        <!-- Jquery Mobile Menu -->
+        <script src="  {% static 'js/jquery.slicknav.min.js' %}"></script>
+
+        <!-- Jquery Slick , Owl-Carousel Plugins -->
+        <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script src="./assets/js/slick.min.js"></script>
+
+        <!-- One Page, Animated-HeadLin -->
+        <script src="{% static 'js/wow.min.js' %}"></script>
+        <script src="{% static 'js/animated.headline.js' %}"></script>
+        <script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
+
+        <!-- Scrollup, nice-select, sticky -->
+        <script src="{% static 'js/jquery.scrollUp.min.js' %}"></script>
+        <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+        <script src="{% static 'js/jquery.sticky.js' %}"></script>
+        
+        <!-- contact js -->
+        <script src="{% static 'js/contact.js' %}"></script>
+        <script src="{% static 'js/jquery.form.js' %}"></script>
+        <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+        <script src="{% static 'js/mail-script.js' %}"></script>
+        <script src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        
+        <!-- Jquery Plugins, main Jquery -->	
+        <script src="{% static 'js/plugins.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>    
+      {% endblock %}
+     
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>    
+   </body>
+</html>
+
+{% comment %} <nav class="navbar navbar-expand-lg navbar-light bg-light" id='okay'>
+         <a class="navbar-brand" href="{% url 'shoper:product_list' %}">My Shop</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+               <a class="nav-item nav-link active" href="{% url 'shoper:product_list' %}">Home <span class="sr-only">(current)</span></a>
+               <a class="nav-item nav-link" href="#">About</a>
+               <a class="nav-item nav-link" href="#">contact</a>
+               
+            </div>
+            <div class = 'cart'>
+              {% with total_items=cart|length %}
+                 {% if cart|length > 0 %}
+                     Your cart:
+                     <a href=" {% url 'cart:cart_detail' %} ">
+                         {{ total_items }} item{{ total_items|pluralize }}, ${{ cart.get_total_price}}
+                     </a>
+                 {% else %}
+                    Your cart is empty.
+                  {% endif %}
+              {% endwith %}
+            </div>
+         </div>
+      </nav> {% endcomment %}

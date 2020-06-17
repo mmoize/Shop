@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/list.css' %}">
+
+  <meta charset="utf-8">
+        
+  {% block 'title' %}
+    Your order
+  {% endblock  %}
+{% endblock  %}
+{% block content %}
+    <h1> Thank you</h1>
+    <p>Your order has been successfully complted. your order number is <strong>{{ order.id }}</p>
+{% endblock  %}

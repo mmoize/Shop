@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/list.css' %}">
+
+  <meta charset="utf-8">
+        
+  {% block 'title' %}
+    Checkout
+  {% endblock  %}
+{% endblock  %}
+{% block content %}
+    <div class = 'order-info'>
+        <h3> Your order</h3>
+        <ul>
+            {% for item in cart %}
+                <li>{{ item.quantity }}X{{ item.product.name }} <span> ${{item.total_price}} </li>
+            {% endfor %}
+        </ul>
+        <p> Total: ${{ cart.get_total_price }}</p>
+    </div>
+    <form action = '.' method='post' class = 'order-form'>
+        {% csrf_token %}
+       {{ form.as_p }}
+       <p><input type ='submit' value="Place order"></P>
+    </form>
+{% endblock  %}
