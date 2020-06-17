@@ -11,6 +11,7 @@ django = "*"
 gunicorn = "*"
 install = "*"
 whitenoise = "*"
+celery = "*"
 
 [requires]
 python_version = "3.7"
