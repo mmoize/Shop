@@ -211,9 +211,32 @@
             </div>
         </section>
         <!--  New Product End -->
+            <div id = 'sidebar' style='text-align: center;'>
+            <h3> Categories</h3>
+            <ul>
+                <li {% if not category %} class = 'selected'{% endif %}>
+                    <a href="{% url 'shoper:product_list' %}">All</a>
+                </li>
+                {% for category in Categories %}
+                <li {% if category.slug == c.slug %} class = "selected"{% endif %}>
+                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="main" class = "pins">
+            <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
+            {% for product in products %}
+                    <div class="pin" size ="12" size-sm="8" offset-sm ="2"  >
+                        <a href= "{{ product.get_absolute_url }}">
+                            <img style="width: 300px;  height: 300px; object-fit: cover;" src ="{% if product.image %}{{ product.image.url }}{% else %}{% static 'image/no_image.jpg' %}{% endif %}"><br>
+                        </a>
+                        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
+                        ${{ product.price }}
+                    </div>
+            {% endfor %}
+        </div>
     </main>
-      
-      {% static '' %}
 
     {% block scripts %}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
@@ -231,7 +254,7 @@
 
         <!-- Jquery Slick , Owl-Carousel Plugins -->
         <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-        <script src="./assets/js/slick.min.js"></script>
+        <script src="{% static 'js/slick.min.js' %}"></script>
 
         <!-- One Page, Animated-HeadLin -->
         <script src="{% static 'js/wow.min.js' %}"></script>
@@ -260,28 +283,3 @@
 {% endblock  %}
 
 
-{% comment %} <div id = 'sidebar' style='text-align: center;'>
-            <h3> Categories</h3>
-            <ul>
-                <li {% if not category %} class = 'selected'{% endif %}>
-                    <a href="{% url 'shoper:product_list' %}">All</a>
-                </li>
-                {% for c in Categories %}
-                <li {% if category.slug == c.slug %} class = "selected"{% endif %}>
-                    <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
-                </li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div id="main" class = "pins">
-            <h1>{% if category %}{{ category.name }}{% else %}Products{% endif %}</h1>
-            {% for product in products %}
-                    <div class="pin" size ="12" size-sm="8" offset-sm ="2"  >
-                        <a href= "{{ product.get_absolute_url }}">
-                            <img style="width: 300px;  height: 300px; object-fit: cover;" src ="{% if product.image %}{{ product.image.url }}{% else %}{% static 'image/no_image.jpg' %}{% endif %}"><br>
-                        </a>
-                        <a href="{{ product.get_absolute_url }}">{{ product.name }}</a><br>
-                        ${{ product.price }}
-                    </div>
-            {% endfor %}
-        </div> {% endcomment %}

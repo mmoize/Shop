@@ -19,7 +19,7 @@ def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
     form= CartAddProductForm()
         
-    return render(request, 'product/detail.html', {'product': product, 'form':form} )
+    return render(request, 'product/product_detail.html', {'product': product, 'form':form} )
     
 
 def shop_all(request, category_slug=None):
