@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'enigmatic-thicket-85514.herokuapp.com',
-    'http://127.0.0.1:8000/'
+    '127.0.0.1'
 ]
 
 

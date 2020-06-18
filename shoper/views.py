@@ -21,3 +21,13 @@ def product_detail(request, id, slug):
         
     return render(request, 'product/detail.html', {'product': product, 'form':form} )
     
+
+def shop_all(request, category_slug=None):
+    category = None
+    categories = Category.objects.all()
+    products = Product.objects.filter(available=True)
+
+    if category_slug:
+        category = get_object_or_404(Category, slug=category_slug)
+        products =products.filter(category=category)
+    return render(request, 'product/shop.html', {'category': category, 'categories': categories, 'products':products})
