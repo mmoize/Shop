@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{% static 'css/slick.css' %}">
     <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
       {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
       <link rel="stylesheet" href="{% static 'css/base.css' %}">
       <meta charset ='utf-8' />
@@ -42,7 +43,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="{% static 'img/logo/logo.png' %}" alt="">
+                    <img src="{% static 'img/logo/logo2_footer.png' %}" alt="">
                 </div>
             </div>
         </div>
@@ -56,7 +57,7 @@
                     <div class="menu-wrapper">
                         <!-- Logo -->
                         <div class="logo">
-                            <a href="{% url 'shoper:product_list' %}"><img src="{% static 'img/logo/logo.png' %}" alt=""></a>
+                            <a href="{% url 'shoper:product_list' %}"><img src="{% static 'img/logo/logos.png' %}" alt=""></a>
                         </div>
                         <!-- Main-menu -->
                         <div class="main-menu d-none d-lg-block">
@@ -65,23 +66,10 @@
                                     <li><a href="{% url 'shoper:product_list' %}">Home</a></li>
                                     <li><a href="{% url 'shoper:shop' %}">shop</a></li>
                                     <li><a href="about.html">about</a></li>
-                                    <li class="hot"><a href="#">Latest</a>
-                                        <ul class="submenu">
-                                            <li><a href="shop.html"> Product list</a></li>
-                                            <li><a href="product_details.html"> Product Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="blog.html">Blog</a>
-                                        <ul class="submenu">
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
                                     <li><a href="#">Pages</a>
                                         <ul class="submenu">
-                                            <li><a href="login.html">Login</a></li>
                                             <li><a href="cart.html">Cart</a></li>
-                                            <li><a href="elements.html">Element</a></li>
+                                            <li><a href="elements.html">About</a></li>
                                             <li><a href="confirmation.html">Confirmation</a></li>
                                             <li><a href="checkout.html">Product Checkout</a></li>
                                         </ul>
@@ -98,7 +86,6 @@
                                         <span class="flaticon-search"></span>
                                     </div>
                                 </li>
-                                <li> <a href="login.html"><span class="flaticon-user"></span></a></li>
                                 <li><a href="cart.html"><span class="flaticon-shopping-cart"></span></a> </li>
                             </ul>
                         </div>
@@ -168,29 +155,3 @@
    </body>
 </html>
 
-{% comment %} <nav class="navbar navbar-expand-lg navbar-light bg-light" id='okay'>
-         <a class="navbar-brand" href="{% url 'shoper:product_list' %}">My Shop</a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-               <a class="nav-item nav-link active" href="{% url 'shoper:product_list' %}">Home <span class="sr-only">(current)</span></a>
-               <a class="nav-item nav-link" href="#">About</a>
-               <a class="nav-item nav-link" href="#">contact</a>
-               
-            </div>
-            <div class = 'cart'>
-              {% with total_items=cart|length %}
-                 {% if cart|length > 0 %}
-                     Your cart:
-                     <a href=" {% url 'cart:cart_detail' %} ">
-                         {{ total_items }} item{{ total_items|pluralize }}, ${{ cart.get_total_price}}
-                     </a>
-                 {% else %}
-                    Your cart is empty.
-                  {% endif %}
-              {% endwith %}
-            </div>
-         </div>
-      </nav> {% endcomment %}
